@@ -1,26 +1,26 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public bool isPaused;
+    [SerializeField] private GameObject playerObject;
+    private InputManager playerInputManager;
 
+    private void Awake()
+    {
+        playerInputManager = playerObject.GetComponent<InputManager>();
+    }
+    
     public void OpenPauseMenu(InputAction.CallbackContext context)
     {
-        isPaused = !isPaused;
-
-        if(isPaused) 
+        if(!playerObject.GetComponent<InputManager>().isPaused)
         {
             gameObject.SetActive(true);
             Cursor.visible = true;
             Time.timeScale = 0;
-        }
-        else
-        {
-            gameObject.SetActive(false);
-            Cursor.visible = false;
-            Time.timeScale = 1f;
+            playerInputManager.isPaused = true;
         }
     }
 
@@ -29,7 +29,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         gameObject.SetActive(false);
         Cursor.visible = false;
-        isPaused = false;
+        playerInputManager.isPaused = false;
     }
 
     public void RestartButtonClick()
@@ -38,15 +38,27 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         Cursor.visible = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        isPaused = false;
+        playerInputManager.isPaused = false;
     }
 
     public void MainMenuButtonClick(string scene)
     {
-        isPaused = false;
         Time.timeScale = 1;
         SceneManager.LoadScene(scene);
         Cursor.visible = true;
+        playerInputManager.isPaused = false;
+    }
+
+    public void NextLevelButtonClick()
+    {
+        if (SceneManager.sceneCountInBuildSettings > SceneManager.GetActiveScene().buildIndex + 1)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Time.timeScale = 1;
+            playerInputManager.isPaused = false;
+        }
+        else
+            SceneManager.LoadScene("MainMenu_01");
     }
 
     public void ExitGameButtonClick()

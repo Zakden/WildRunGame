@@ -13,6 +13,7 @@ public class CoinController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        gameObject.GetComponent<MeshCollider>().enabled = false;
         coinAnimator.SetBool("Alive", false);
         coinAnimator.SetTrigger("Collect");
         Destroy(transform.parent.gameObject, timeToDelete);

@@ -94,13 +94,22 @@
             ]
         },
         {
-            "name": "Player Pause",
+            "name": "Player Actions",
             "id": "b9bdaf4d-8de8-4e0a-9c38-29a91e904720",
             "actions": [
                 {
                     "name": "Pause",
                     "type": "Button",
                     "id": "b3a4d234-8ada-4d7e-af6e-cb9461bd7403",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interract",
+                    "type": "Button",
+                    "id": "4869a48b-3701-43a3-9aa4-accbd6f25b7a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -116,6 +125,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ca6a35f7-9eaf-43ad-83e2-15cf9e6ce1f2",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interract",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

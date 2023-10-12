@@ -1,7 +1,5 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerLocomotion : MonoBehaviour
 {
@@ -22,7 +20,7 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField] private bool isGrounded;
 
     [Header("Movement Speeds")]
-    [SerializeField] private float movementSpeed = 7;
+    [SerializeField, Range(1, 12)] private float movementSpeed = 3;
     [SerializeField] private float rotationSpeed = 15;
 
     private void Awake()
@@ -109,21 +107,6 @@ public class PlayerLocomotion : MonoBehaviour
             else
             {
                 transform.position = targetPosition;
-            }
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("DeathZone"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-        if(collision.gameObject.CompareTag("Finish"))
-        {
-            if(SceneManager.sceneCountInBuildSettings > SceneManager.GetActiveScene().buildIndex + 1)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }

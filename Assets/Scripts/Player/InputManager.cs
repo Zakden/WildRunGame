@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    PlayerControls playerControls;
-    AnimatorManager animatorManager;
+    private PlayerControls playerControls;
+    private AnimatorManager animatorManager;
+    private PlayerTriggers playerTriggers;
     [SerializeField] private PauseMenu pauseMenu;
 
     private Vector2 movementInput;
@@ -17,9 +18,13 @@ public class InputManager : MonoBehaviour
     public float verticalInput;
     public float horizontalInput;
 
+    public bool isInterract = false;
+    public bool isPaused = false;
+
     private void Awake()
     {
         animatorManager = GetComponent<AnimatorManager>();
+        playerTriggers = GetComponent<PlayerTriggers>();
     }
 
     private void OnEnable()
@@ -30,8 +35,11 @@ public class InputManager : MonoBehaviour
 
             playerControls.PlayerMovement.WASD.performed += i => movementInput = i.ReadValue<Vector2>();
             playerControls.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
-
-            playerControls.PlayerPause.Pause.performed += pauseMenu.OpenPauseMenu;
+            
+            playerControls.PlayerActions.Pause.performed += pauseMenu.OpenPauseMenu;    
+            
+            playerControls.PlayerActions.Interract.performed += i => isInterract = true;
+            playerControls.PlayerActions.Interract.canceled += i => isInterract = false;
         }
 
         playerControls.Enable();
@@ -44,7 +52,7 @@ public class InputManager : MonoBehaviour
 
     public void HandleAllInputs()
     {
-        if (pauseMenu.isPaused) return;
+        if (isPaused || playerTriggers.isDeath) return;
         HandleMovementInput();
     }
 

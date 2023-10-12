@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - DeathZone
+  - InterractObject
+  - Coin
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Death
   - Water
   - UI
   - Player

@@ -26,6 +26,7 @@ public class PlayerManager : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (inputManager.isPaused) return;
         cameraManager.HandleAllCameraMovement();
     }
 }

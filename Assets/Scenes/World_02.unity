@@ -139,6 +139,16 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 3246926181272004163, guid: 6969ce28017e2d14398f6ca7926bd0a5, type: 3}
   m_PrefabInstance: {fileID: 721038611}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &147111671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8061251433560493254, guid: 29e6bd408e2de0f4d9b72a76873dfd43, type: 3}
+  m_PrefabInstance: {fileID: 1050137164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &190186377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 123237884, guid: eefb9008bcc66d24ebc65fc3a0c79e60, type: 3}
+  m_PrefabInstance: {fileID: 1828693817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &604598781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -581,6 +591,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 118951033, guid: 29e6bd408e2de0f4d9b72a76873dfd43, type: 3}
+      propertyPath: DeathMenu
+      value: 
+      objectReference: {fileID: 190186377}
+    - target: {fileID: 118951033, guid: 29e6bd408e2de0f4d9b72a76873dfd43, type: 3}
+      propertyPath: FinishMenu
+      value: 
+      objectReference: {fileID: 1163760205}
     - target: {fileID: 5866666020650463802, guid: 29e6bd408e2de0f4d9b72a76873dfd43, type: 3}
       propertyPath: pauseMenu
       value: 
@@ -635,6 +653,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29e6bd408e2de0f4d9b72a76873dfd43, type: 3}
+--- !u!1 &1163760205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1127103918, guid: eefb9008bcc66d24ebc65fc3a0c79e60, type: 3}
+  m_PrefabInstance: {fileID: 1828693817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1475388407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -879,6 +902,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 123237888, guid: eefb9008bcc66d24ebc65fc3a0c79e60, type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 147111671}
+    - target: {fileID: 1127103920, guid: eefb9008bcc66d24ebc65fc3a0c79e60, type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 147111671}
     - target: {fileID: 5259813976414726640, guid: eefb9008bcc66d24ebc65fc3a0c79e60, type: 3}
       propertyPath: m_Name
       value: PauseMenuCanvas
@@ -979,6 +1010,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5259813976850168751, guid: eefb9008bcc66d24ebc65fc3a0c79e60, type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 147111671}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eefb9008bcc66d24ebc65fc3a0c79e60, type: 3}
 --- !u!1 &2018938573
