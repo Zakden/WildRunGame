@@ -44,6 +44,7 @@ public class PlayerTriggers : MonoBehaviour
         yield return new WaitForSeconds(1);
         Cursor.visible = true;
         DeathMenu.SetActive(true);
+        DeathMenu.GetComponentInChildren<Text>().text = $"Score: {scoreText.text}";
         playerRigidBody.isKinematic = true;
         inputManager.isPaused = true;
     }
@@ -51,6 +52,7 @@ public class PlayerTriggers : MonoBehaviour
     private IEnumerator Finish()
     {
         Time.timeScale = 0;
+        FinishMenu.GetComponentInChildren<Text>().text = $"Score: {scoreText.text}";
         FinishMenu.SetActive(true);
         playerRigidBody.isKinematic = true;
         Cursor.visible = true;

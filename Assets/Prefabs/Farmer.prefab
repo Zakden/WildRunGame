@@ -3103,6 +3103,7 @@ MonoBehaviour:
   DeathMenu: {fileID: 0}
   FinishMenu: {fileID: 0}
   InterractPanel: {fileID: 0}
+  scoreText: {fileID: 0}
   isDeath: 0
 --- !u!1 &8474923434760020651
 GameObject:

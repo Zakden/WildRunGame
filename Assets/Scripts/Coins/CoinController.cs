@@ -4,6 +4,7 @@ public class CoinController : MonoBehaviour
 {
     // Время удаления объекта
     const float timeToDelete = 1f;
+    [SerializeField] ParticleSystem blowEffect;
     private Animator coinAnimator;
 
     private void Awake()
@@ -17,5 +18,7 @@ public class CoinController : MonoBehaviour
         coinAnimator.SetBool("Alive", false);
         coinAnimator.SetTrigger("Collect");
         Destroy(transform.parent.gameObject, timeToDelete);
+        if(blowEffect != null) 
+            blowEffect.Play();
     }
 }
